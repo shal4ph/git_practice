@@ -5,39 +5,14 @@
     <!-- <meta name="viewport" content="width, initial-scale=1.0"> -->
     <title>Document</title>
     <style>
-    * {
-        color: red;
+    p::before{
+        content: "this will come before p tag"
     }
-    h1{
-        color: blueviolet;
+    p::after{
+        content: "this will come after p tag"
     }
-    .para{
-        color: yellowgreen;
-    }
-    .author{
-        color: royalblue;
-    }
-    /* equality of an attribute to certain value */
-    [data="medicines"]{
-        color:brown;
-    }
-    [data]{
-        color:gray;
-    }
-    [data^="me"]{
-        color:pink;
-    }
-    [data*="me"]{
-        color:rebeccapurple;
-    }
-
-    [data$="me"]{
-        color:peru;
-    }
-
-
 </style>
-</head>
+  </head>
 <body>
     <h1>selectors in css</h1>
     <ol>
@@ -50,9 +25,16 @@
         <li>Group</li>
     </ol>
 </body>
-<p class="para">i am fine thank you</p>
+<div><p class="para">i am fine thank you</p>
+</div>
+
 <p class="author">shalu</p>
-<p data="medicines">advanced science</p>
+
+<p data="medicines">advanced science eeee   
+   <div class="brother">rrrrr tttt </div>
+   <div class="sister">fffff</div>  
+   <div class="sister">yes u r ruight fffff</div>  
+   uuu ss</p>
 <p data="me">advanced maths</p>
 <p data="species">advanced english literature</p>
 <p>i am fine thank you</p>
