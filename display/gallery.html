@@ -12,6 +12,7 @@ text-align: center;
         h1{
             color: blueviolet;
         }
+      
         .grid-container {
             display:  grid;
             gap: 1 rem;
@@ -21,9 +22,33 @@ text-align: center;
         .grid-container>div>img{
             width: 100%;
             height: 100%;
+            
         }
         .grid-container>div>img:hover{
+
 filter: brightness(50%);
+transition: 5s all;
+/* transform: scale(1.2); */
+transform: rotate(30deg);
+        }
+        .image-title:hover{
+font-size: 1.5rem;
+transition: 0.4s all;
+transform: rotate(2deg);
+        }
+.grid-container>div{
+    position: relative;
+    overflow: hidden;
+}
+        
+        .image-title{
+            position: absolute;
+            bottom: 1rem;
+            z-index: 2;
+            color: azure;
+            left: 42%;
+            font-size: 1.5rem;
+            display: block;
         }
     
     </style>
@@ -31,10 +56,14 @@ filter: brightness(50%);
 <body>
     <h1>PHOTO GALLERY app</h1>
     <div class="grid-container">
-<div><img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zmxvd2VyfGVufDB8fDB8fHww" alt="sunset"></div>
-<div><img src="https://plus.unsplash.com/premium_photo-1675873580364-8845f681b4ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zmxvd2VyfGVufDB8fDB8fHww" alt="hahahah"></div>
-<div><img src="https://images.unsplash.com/photo-1534211698458-e2be12c1a94c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="ee"></div>
-<div><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="ee"></div>
+<div><img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zmxvd2VyfGVufDB8fDB8fHww" alt="sunset">
+<div class="image-title">Sunset</div>
+</div>
+<div><img src="https://plus.unsplash.com/premium_photo-1675873580364-8845f681b4ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zmxvd2VyfGVufDB8fDB8fHww" alt="hahahah">
+    <div class="image-title">Sunset11</div></div>
+<div><img src="https://images.unsplash.com/photo-1534211698458-e2be12c1a94c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="ee">
+    <div class="image-title">Sunset111</div></div>
+<!-- <div><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="ee"></div>
 <div><img src="https://images.unsplash.com/photo-1442458017215-285b83f65851?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="ee"></div>
 <div><img src="https://images.unsplash.com/photo-1495231916356-a86217efff12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="ee"></div>
 <div><img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="ee"></div>
@@ -42,7 +71,7 @@ filter: brightness(50%);
 <div><img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="ee"></div>
 <div><img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="rr"></div>
 <div><img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="ee"></div>
-<div><img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="we"></div>
+<div><img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D" alt="we"></div> -->
     </div>
 </body>
 </html>
