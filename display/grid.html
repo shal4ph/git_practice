@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta charset="UTF-8"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Document</title>
     <style>
+        h1{
+
+        }
         .grid-container{
-            display:grid;
-            grid-template-rows:8rem 8rem 8rem 8rem;
-            grid-template-columns:8rem 8rem 8rem 8rem;
+            display: grid;
+            grid-template-rows: repeat(4, 8rem);
+            grid-template-columns: repeat(3 1fr);
+            gap: 1rem;
+        }
+        .item-1{
+            background: #ef5350;
+        }
+        .item-2{
+            background: #810f0d;
+        }
+        .item-3{
+            background: #696363;
+        }
+        .item-4{
+            background: #ef5350;
+        }
+        .item-5{
+            background: #30968d;
+        }
+        .item-6{
+            background: #403983;
         }
     </style>
 </head>
 <body>
+    <h1></h1>
     <div class="grid-container">
 <div class="item-1"></div>
 <div class="item-2"></div>
