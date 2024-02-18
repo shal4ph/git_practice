@@ -6,8 +6,12 @@
     <title>Document</title>
 
     <style>
+        .flex-grandparent{
+            justify-content: center;
+        }
         .flex-container{
             display: flex;
+           width: 600px;;
            
         }
         .child-1{
@@ -38,17 +42,14 @@
     </style>
 </head>
 <body>
-    <div class="flex-container">
-<div class="child-1"></div>
-<div class="child-2"></div>
-<div class="child-3"></div>
-<div class="child-4"></div>
-<div class="child-5"></div>
-<div class="child-1"></div>
-<div class="child-2"></div>
-<div class="child-3"></div>
-<div class="child-4"></div>
-<div class="child-5"></div>
-    </div>
+    <div class="flex-grandparent"> <div class="flex-container">
+        <div class="child-1"></div>
+        <div class="child-2"></div>
+        <div class="child-3"></div>
+        <div class="child-4"></div>
+        <div class="child-5"></div>
+
+    </div></div>
+   
 </body>
 </html>
