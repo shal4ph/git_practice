@@ -47,3 +47,24 @@ console.log("recent amount "+ amount);
 
 const taxAmount = 10.0;
 console.log(typeof taxAmount);
+
+const prices = [1,2,3,4]
+prices[0] = 5;
+console.log(prices[0]);
+let amounty = 5000.00;
+let discounty = 5.0;
+const taxy = 50.0;
+
+if (amounty>3500){
+    discounty = 10.0;
+
+}
+else {
+    discounty = 5.0;
+}
+
+
+let finalAmounty = amounty - (amounty*discounty/100) + taxy;
+console.log(finalAmounty);
+
+
