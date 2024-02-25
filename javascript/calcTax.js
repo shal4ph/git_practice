@@ -13,5 +13,8 @@ let emp2 = { first: 'Mita', last: 'Pija', age: 49};
 let showDetails = function(username, salary){
     console.log(this.first+ " "+ this.last+ " with age as "+this.age+ " has username "+ username + " and has salary "+salary);
 }
-showDetails.call(emp2, "shal1234", "1000");
-showDetails.apply(emp, ['shalu89', '909']);
+// showDetails.call(emp2, "shal1234", "1000");
+// showDetails.apply(emp, ['shalu89', '909']);
+let allDetails = showDetails.bind(emp2, 'shal444', '8888');
+//console.log(allDetails());
+allDetails();
