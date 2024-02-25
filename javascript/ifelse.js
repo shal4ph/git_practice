@@ -1,4 +1,4 @@
-let username = "juhis@gmail.com";
+let username = "juhi@gmail.com";
 let password = "ggg"
 if(username == "juhi@gmail.com"){
     if(password =="ggg"){
