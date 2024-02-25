@@ -62,7 +62,7 @@ let choice = 1;
 do{
 
     
-choice = prompt("pick \n1. tea \n2. coffee\n3. exit");
+choice = intParse(prompt("pick \n1. tea \n2. coffee\n3. exit"));
  
 
 switch(choice){
@@ -80,3 +80,4 @@ switch(choice){
 }
 }
 while(choice>=1 && choice <=5);
+
