@@ -12,4 +12,4 @@ message = "best mosam";
     }
     return message;
 }
-console.log(displayWeather("los angeles"));
+let result = console.log(displayWeather("los angeles"));
