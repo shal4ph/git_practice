@@ -24,7 +24,7 @@ let end = len;
 
 for(let i = 0; i< n; i++){
 
-    if(i == n-1){ result.push.slice(start);
+    if(i == n-1){ result.push(inputArr.slice(start));
     } else{
         result.push(inputArr.slice(start, end))
     }
@@ -40,6 +40,7 @@ for(let i = 0; i< n; i++){
 // let num = 2;
 // const response = groupArrayElements(arr, num);
 // console.log(response);
+
 
 
 
