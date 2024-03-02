@@ -1,7 +1,46 @@
-button{
+/* button{
 
     border-radius: 10px;
     padding:  15px 25px;
     background-color: aqua;
     color: brown;
+} */
+
+@keyframes moveAround {
+
+    0%, 100% {
+        left: 0px;
+        top: 0px;
+        background-color: rgb(194, 71, 40);
+    }
+    25% {
+        left: 200px;
+        top: 0px;
+        background-color: rgb(43, 129, 17);
+    }
+    50% {
+        left: 200px;
+        top: 200px;
+        background-color: aquamarine;
+        border-radius: 100px;
+    }
+    75% {
+        left: 0px;
+        top: 200px;
+        background-color: rgb(122, 69, 133);
+    }
+   
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+
+    position: relative;
+
+    animation-name: moveAround;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
 }
