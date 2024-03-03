@@ -9,7 +9,9 @@
     <h1 id="user">Hello, user!</h1>
     <script>
         let username = prompt("Enter your name: ");
+        if(username.length>0){
         document.getElementById("user").innerText = "Hello, " + username;
+    }
     </script>
     <!-- <script src=""></script> -->
 </body>
