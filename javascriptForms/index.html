@@ -6,12 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="user">Hello, user!</h1>
+    <!-- <h1 id="user">Hello, user!</h1> -->
+    <input type="text" placeholder="your name here" id="usernameInput">
+    <button onclick="greetUser()">click here</button>
     <script>
-        let username = prompt("Enter your name: ");
-        if(username.length>0){
-        document.getElementById("user").innerText = "Hello, " + username;
-    }
+        function greetUser(){
+        let username = document.getElementById("usernameInput").value;
+        let heading = document.createElement("h1");
+        heading.innerText = `Hello ${username}`;
+        document.getElementsByTagName("body")[0].appendChild(heading);
+        }
+        // let username = prompt("Enter your name: ");
+        // if(username.length>0){
+        // document.getElementById("user").innerText = "Hello, " + username;
+    // }
     </script>
     <!-- <script src=""></script> -->
 </body>
