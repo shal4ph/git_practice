@@ -17,7 +17,7 @@
 // });
 
 let addPostButton = document.querySelector("button");
-addPostButton.addEventListener("click", ()=>{storePost});
+addPostButton.addEventListener("click", storePost);
 
 function storePost(){
     let blogTitle = document.getElementById("blogTitle").value;
