@@ -20,8 +20,22 @@ let addPostButton = document.querySelector("button");
 addPostButton.addEventListener("click", storePost);
 
 function storePost(){
+    //reading input value
     let blogTitle = document.getElementById("blogTitle").value;
-console.log(blogTitle + " will be added!");
+    //new <li> tag created
+// console.log(blogTitle + " will be added!");
+let newPostItem = document.createElement("li");
+//new <p> tag created
+let newPostContent = document.createElement("p");
+//adding content to <p> tag
+newPostContent.innerText = blogTitle;
+// console.log(newPostContent);
+// addding <p> inside <li>
+newPostItem.appendChild(newPostContent);
+//fetching <ul> from document
+let allPosts = document.getElementById("allPosts");
+//adding <li> inside <ul>
+allPosts.appendChild(newPostItem);
 
 
 }
