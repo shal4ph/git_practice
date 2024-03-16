@@ -45,7 +45,7 @@ const BookCollection = {
     //3. search for a book
     searchBook: function (title) {
        
-        let filteredBooks = this.books.filter((book) => book.title.includes(title));
+        let filteredBooks = this.books.filter((book) => book.title.tolowerCase().includes(title));
         if (filteredBooks.length == 0) {
          document.getElementById("userMessage").innerText = "No books found!";
         } else {
@@ -113,6 +113,10 @@ addBookButton.addEventListener("click", () =>{BookCollection.addBook();});
 // });
 // document.getElementById("bookList").innerHTML = content;
 // }
+
+//display books from storage
+
+BookCollection.displayBooks(BookCollection.books);
 
 //adding event listener to the Remove Book Button
 
