@@ -16,8 +16,8 @@ const BookCollection = {
         let bookRating = document.getElementById("bookRating").value;
         let book= new Book(bookTitle, bookAuthor, bookRating);
       this.books.push(book) ;
-      console.log(this.books);
-      BookCollection.displayBooks();
+    //  console.log(this.books);
+      this.displayBooks(this.books);
      // console.log(`Book ${book.title} added sxsfully with ID ${book.id}!`);
      attachRemoveListener();
 
@@ -32,20 +32,21 @@ const BookCollection = {
         }else {
                 let removeBook = this.books.splice(bookToBeRemoved, 1);
                 console.log(removeBook);
-                this.displayBooks();
+                this.displayBooks(this.books);
             }
         
     },
 
     //3. search for a book
-    searchBook: function (title){
+    searchBook: function (title) {
+       
         let filteredBooks = this.books.filter((book) => book.title.includes(title));
-        if (filteredBooks.length == 0){
-           // console.log(`No books found with the title : ${title}`);
+        if (filteredBooks.length == 0) {
+         document.getElementById("userMessage").innerText = "No books found!";
         } else {
-          //  console.log("here is what we found: ");
-           // filteredBooks.forEach((book)=>
-           // console.log(`${book.title} released in ${book.year}  written by ${book.author}`));
+          this.disp
+          document.getElementById("userMessage").innerText = "";layBooks(filteredBooks);
+        
         }
     },
 
@@ -68,10 +69,10 @@ const BookCollection = {
         }
     },
     //5. display books
-    displayBooks: function (){
+    displayBooks: function (inputArray){
         let content = "";
 
-this.books.forEach((book) => {
+inputArray.forEach((book) => {
     let individualBook = `<div>
     <h3>Title : ${book.title}</h3>
     <h4>Author : ${book.author}</h4>
@@ -93,7 +94,7 @@ addBookButton.addEventListener("click", () =>{BookCollection.addBook();});
 
 //display books on the screen
 
-// function displayBooks(){
+// function displayBooks(inputArray){
 // let content = "";
 
 
@@ -122,3 +123,7 @@ allRemoveButtons.forEach((button)=>{
 // removeBookButton.addEventListener("click", (e) => {
 //     BookCollection.removeBook(e.target.id);
 // });
+
+//adding onchange listener to search input
+let searchInput = document.getElementById("searchTitle");
+searchInput.addEventListener('change', ()=>{BookCollection.searchBook(searchInput.value);});
