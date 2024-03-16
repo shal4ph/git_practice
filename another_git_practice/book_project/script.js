@@ -6,8 +6,12 @@ this.id = Date.now().toString();
 this.reviews = [];
 
 }
+
+
+console.log(currentBooks);
 const BookCollection = {
-    books:[],
+  
+    books:JSON.parse(localStorage.getItem("books"))||[];,
 
     //1. add a book
     addBook: function (){
@@ -20,6 +24,7 @@ const BookCollection = {
       this.displayBooks(this.books);
      // console.log(`Book ${book.title} added sxsfully with ID ${book.id}!`);
      attachRemoveListener();
+     saveForLater();
 
     },
 
@@ -127,3 +132,8 @@ allRemoveButtons.forEach((button)=>{
 //adding onchange listener to search input
 let searchInput = document.getElementById("searchTitle");
 searchInput.addEventListener('change', ()=>{BookCollection.searchBook(searchInput.value);});
+
+function saveForLater(){
+
+    localStorage.setItem("books", JSON.stringify(BookCollection.books));
+}
