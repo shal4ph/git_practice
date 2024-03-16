@@ -10,4 +10,8 @@
 // // console.log(postTitle);
 
 let blogTitle = document.getElementById("blogTitle");
-blogTitle.addEventListener("change", (e) => {console.log(e.target.value)});
+console.log(blogTitle);
+blogTitle.addEventListener("change", (e) => {e.target.value.length==0
+    ?(blogTitle.style.border="5px solid red")
+    :(blogTitle.style.border="5px solid green");
+});
