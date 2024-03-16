@@ -36,6 +36,8 @@ newPostItem.appendChild(newPostContent);
 let allPosts = document.getElementById("allPosts");
 //adding <li> inside <ul>
 allPosts.appendChild(newPostItem);
+//empty value of <input> field
+document.getElementById("blogTitle").value = "";
 
 
 }
