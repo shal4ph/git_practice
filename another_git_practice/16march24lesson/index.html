@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1 id="username"></h1>
     <button onclick="loadData()">Load data</button>
     <script>
         function loadData(){
@@ -23,6 +24,9 @@
             myRequest.onreadystatechange = () => {
                 if (myRequest.readyState === 4 && myRequest.status === 200) {
                     console.log(myRequest.responseText);
+                    let convertedData = JSON.parse(responseText);
+                    document.getElementById("username").innerText = 
+                    convertedData.results[0].name.first;
                 }
             };
         }
