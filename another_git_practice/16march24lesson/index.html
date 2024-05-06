@@ -24,7 +24,7 @@
             myRequest.onreadystatechange = () => {
                 if (myRequest.readyState === 4 && myRequest.status === 200) {
                     console.log(myRequest.responseText);
-                    let convertedData = JSON.parse(responseText);
+                    let convertedData = JSON.parse(myRequest.responseText);
                     document.getElementById("username").innerText = 
                     convertedData.results[0].name.first;
                 }
