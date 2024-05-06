@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="loadData()">Load data</button>
+    <script>
+        function loadData(){
+            let myRequest = new XMLHttpRequest(); //readyState = 0;
+
+            myRequest.open("GET", "https://www.randomuser.me/api");
+            //readyState = 1
+
+            myRequest.send(); //readyState = 2
+
+            //server processing, readyState = 3
+
+            //after response received, readyState = 4
+
+            myRequest.onreadystatechange = () => {
+                if (myRequest.readyState === 4 && myRequest.status === 200) {
+                    console.log(myRequest.responseText);
+                }
+            };
+        }
+    </script>
+
+</body>
+</html>
