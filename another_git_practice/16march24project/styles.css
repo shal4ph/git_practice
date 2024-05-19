@@ -1,5 +1,6 @@
 #allBooks{
 display: flex;
+flex-wrap: wrap;
 }
 
 .book{
