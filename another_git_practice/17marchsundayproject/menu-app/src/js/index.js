@@ -54,9 +54,9 @@ const menu = [
 
 
 let allDishes = document.getElementById("allDishes");
-let content = "";;
-menubar.forEach((dish)=>{
-  let individualDish = ` <div class="dish">
+let content = "";
+menu.forEach((dish)=>{
+  let individualDish = `<div class="dish">
   <img src=${dish.img} width="200" height="90" />
   <div class="dishOuter">
 
