@@ -9,3 +9,40 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+#headerTitle{
+  text-align: center;
+  margin: 20px;
+  color:rgb(36,36,93)
+}
+
+#headerBar{
+  text-align: center;
+  margin: 20px;
+  border-top: 5px solid rgb(142,142,65);
+}
+
+#allButtons{
+  text-align: center;
+  margin: 20px;
+}
+
+.categoryButton{
+  padding:10px 30 px;
+  font-size: 16px;
+  background-color: rgb(220,207,190);
+  border-radius: 10px;
+  margin-left: 10px;
+  border: 3px solid rgb(142,142,65);
+}
+
+.categoryButton:hover{
+  cursor: pointer;
+  border: 3px solid rgb(36,36,93);
+}
+
+#allDishes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

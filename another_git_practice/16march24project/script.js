@@ -26,7 +26,10 @@ async function fetchBooks() {
 // myRequest.onreadystatechange = () => {
   
 //     if (myRequest.readyState === 4 && myRequest.status === 200) {
-    let response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookTitle}`);
+    let response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookTitle}`
+    );
+
+
         let convertedBooks = await response.json();
       //  console.log(convertedBooks);
         let newBook = convertedBooks.items
@@ -45,6 +48,7 @@ async function fetchBooks() {
      
     //}
     allBooks.innerHTML = content;
+    document.getElementById("bookTitle").value="";
 //};
 
 //step 4 convert response to JS object
