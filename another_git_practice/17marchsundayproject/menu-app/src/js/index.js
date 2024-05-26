@@ -55,8 +55,9 @@ const menu = [
 
 let allDishes = document.getElementById("allDishes");
 let content = "";
+displayAll(menu);
 function displayAll(dishes){
-
+content = "";
 dishes.forEach((dish)=>{
   let individualDish = `<div class="dish">
   <img src=${dish.img} width="200" height="90" />
@@ -81,14 +82,23 @@ allDishes.innerHTML = content;
 }
 let allButtons = document.querySelectorAll("button");
 //console.log(allButtons);
-allButtons.forEach((button)=>button.addEventListener("click", (e)=>{filterItems(e.target.innerText);
+allButtons.forEach((button)=>
+button.addEventListener("click", (e)=>{
+  filterItems(e.target.innerText);
 })
 );
 
 function filterItems(category){
-  console.log(category);
   allDishes.innerHTML += "";
-  let filteredItems = menu.filter((dish)=>dish.category.toLowerCase()==category.toLowerCase());
-  console.log(filteredItems);
+ // console.log(category);
+ if(category=="All"){
+  displayAll(menu);
+ } else {
+  let filteredItems = menu.filter((dish)=>dish.category.toLowerCase()==category.toLowerCase()
+  );
+  //console.log(filteredItems);
   displayAll(filteredItems);
+ }
+  
+  
 }
