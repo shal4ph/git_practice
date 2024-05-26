@@ -55,7 +55,9 @@ const menu = [
 
 let allDishes = document.getElementById("allDishes");
 let content = "";
-menu.forEach((dish)=>{
+function displayAll(dishes){
+
+dishes.forEach((dish)=>{
   let individualDish = `<div class="dish">
   <img src=${dish.img} width="200" height="90" />
   <div class="dishOuter">
@@ -76,9 +78,17 @@ content += individualDish;
 
 allDishes.innerHTML = content;
 //filter logic here
-
+}
 let allButtons = document.querySelectorAll("button");
-console.log(allButtons);
-allButtons.forEach((button)=>addEventListener("click", (e)=>{filterItems(e.target.innerText);
+//console.log(allButtons);
+allButtons.forEach((button)=>button.addEventListener("click", (e)=>{filterItems(e.target.innerText);
 })
 );
+
+function filterItems(category){
+  console.log(category);
+  allDishes.innerHTML += "";
+  let filteredItems = menu.filter((dish)=>dish.category.toLowerCase()==category.toLowerCase());
+  console.log(filteredItems);
+  displayAll(filteredItems);
+}
