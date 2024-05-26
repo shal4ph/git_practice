@@ -75,3 +75,10 @@ content += individualDish;
 });
 
 allDishes.innerHTML = content;
+//filter logic here
+
+let allButtons = document.querySelectorAll("button");
+console.log(allButtons);
+allButtons.forEach((button)=>addEventListener("click", (e)=>{filterItems(e.target.innerText);
+})
+);
