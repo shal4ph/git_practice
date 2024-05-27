@@ -51,7 +51,10 @@
 // }
 // ];
 
-
+filterItems(import.meta.env.DEV){
+  import('../api/browser').then(({worker})=>worker.start().then(()=>fetch("/dishes").then((res)=>console.log(res.json)))
+  );
+}
 
 let allDishes = document.getElementById("allDishes");
 let content = "";
