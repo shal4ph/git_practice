@@ -51,23 +51,40 @@
 // }
 // ];
 
-filterItems(import.meta.env.DEV){
-  import('../api/browser').then(({worker})=>
-  worker
-  .start()
-  .then(()=>fetch("/dishes")
-  .then((res)=>console.log(res.json)))
+//API Connection
+
+if (import.meta.env.DEV) {
+  import("../api/browser").then(({ worker }) =>
+    worker
+      .start()
+      .then(() => fetch("/dishes"))
+      .then((res) => res.json())
+      .then((res) => (menu = res))
   );
 }
 
+//variable declarations
+
+let menu = [];
+let allAddToCartButtons = [];
+let cart = [];
+let allCartDeleteButtons = [];
 let allDishes = document.getElementById("allDishes");
 let content = "";
+let cartContent = "";
+let allButtons = document.querySelectorAll("button");
+
+//function calls
+
+updateCartCounter();
 displayAll(menu);
-function displayAll(dishes){
-content = "";
-dishes.forEach((dish)=>{
-  let individualDish = `<div class="dish">
-  <img src=${dish.img} width="200" height="90" />
+displayCartDishes();
+
+function displayAll(dishes) {
+  content = "";
+  dishes.forEach((dish) => {
+    let individualDish = `<div class="dish">
+  <img src=${dish.img} />
   <div class="dishOuter">
 
   <div class="dishInner">
@@ -78,34 +95,111 @@ dishes.forEach((dish)=>{
   <p class="dishContent">
    ${dish.desc}
   </p>
-
+<button class="dishCartButton">Add to cart</button>
 </div>
 </div>`;
-content += individualDish;
-});
+    content += individualDish;
+  });
 
-allDishes.innerHTML = content;
-//filter logic here
+  allDishes.innerHTML = content;
+  getCartButtons();
 }
-let allButtons = document.querySelectorAll("button");
+
 //console.log(allButtons);
-allButtons.forEach((button)=>
-button.addEventListener("click", (e)=>{
-  filterItems(e.target.innerText);
-})
+allButtons.forEach((button) =>
+  button.addEventListener("click", (e) => {
+    filterItems(e.target.innerText);
+  })
 );
 
-function filterItems(category){
+function filterItems(category) {
   allDishes.innerHTML += "";
- // console.log(category);
- if(category=="All"){
-  displayAll(menu);
- } else {
-  let filteredItems = menu.filter((dish)=>dish.category.toLowerCase()==category.toLowerCase()
+  // console.log(category);
+  if (category == "All") {
+    displayAll(menu);
+  } else {
+    let filteredItems = menu.filter(
+      (dish) => dish.category.toLowerCase() == category.toLowerCase()
+    );
+    //console.log(filteredItems);
+    displayAll(filteredItems);
+  }
+}
+
+//cart functions
+
+function updateCartCounter() {
+  document.getElementById("cartButton").innerHTML = "&#x1F6D2;" + cart.length;
+}
+
+function getCartButtons() {
+  allAddToCartButtons = document.querySelectorAll(".dishCartButton");
+  allAddToCartButtons.forEach((button) =>
+    button.addEventListener("click", (e) => {
+      addDishToCart(e.target.id);
+    })
   );
-  //console.log(filteredItems);
-  displayAll(filteredItems);
- }
-  
-  
+}
+function addDishToCart(dishID) {
+  let flag = -1;
+  menu.forEach((dish) => {
+    if (dish.id == dishID) {
+      cart.forEach((cartDish) => {
+        if (cartDish.id == dishID) {
+          cartDish.quantity += 1;
+          flag = 1;
+        }
+      });
+      if (flag != 1) {
+        let tempDish = { ...dish, quantity: 1 };
+        cart.push(tempDish);
+      }
+    }
+  });
+  updateCartCounter();
+  displayCartDishes();
+}
+
+function displayCartDishes() {
+  cartContent = "";
+  cart.forEach((dish) => {
+    let individualDish = `<div class="cartDish">
+      <img src=${dish.img} alt="" />
+      <h3>${dish.title}</h3>
+      <h3>${dish.price}</h3>
+      <h3>${dish.quantity}</h3>
+      <p class="cartDelete" id=${dish.id}>x</p>
+    </div>`;
+    cartContent += dish;
+  });
+  document.getElementById("cart").innerHTML = cartContent;
+  getDeleteButtons();
+}
+//select all Delete buttons
+function getDeleteButtons() {
+  allCartDeleteButtons = document.querySelectorAll(".cartDelete");
+  allCartDeleteButtons.forEach((button) =>
+    button.addEventListener("click", (e) => {
+      removeDishFromCart(e.target.id);
+      // console.log("Remove button clicked!"+e.target.id);
+      //console.log(cart);
+    })
+  );
+}
+
+function removeDishFromCart(removeID) {
+  let flag = -1;
+  let tempID = -1;
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id == removeID) {
+      flag = 1;
+      tempID = i;
+    }
+  }
+  if (flag) {
+    cart.splice(tempID, 1);
+  }
+
+  updateCartCounter();
+  displayCartDishes();
 }

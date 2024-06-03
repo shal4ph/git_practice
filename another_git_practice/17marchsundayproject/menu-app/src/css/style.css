@@ -75,3 +75,63 @@ body {
 .dishName{
   text-transform: capitalize;
 }
+
+#cartButtonContainer{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+#cartButton{
+  font-size: 20px;
+}
+
+.dishCartButton{
+  width: 150px;
+  padding: 10px 20px;
+  border: 3px solid rgb(142,142,65);
+  background-color: rgb(220,207,190);
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.dishCartButton:hover{
+cursor: pointer;
+border: 3px solid rgb(36,36,93);
+}
+
+#cart{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cartDish img{
+width: 20%;
+
+}
+
+.cartDish{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#cartTitle{
+  text-align: center;
+  margin: 20px;
+  color:rgb(36,36,93)
+}
+
+.cartDelete{
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  width: 100px;
+}
+
+.cartDelete:hover{
+  cursor: pointer;
+}
