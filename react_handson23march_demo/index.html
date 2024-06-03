@@ -9,5 +9,13 @@
     </head>
     <body>
         <div id="root"></div>
+
+        <script type="text/javascript">
+            const rootE1 = document.getElementById("root");
+            const element = document.createElement("h1");
+            element.textContent = "This is created using Javascript..."
+            element.classList.add("message");
+            rootE1.appendChild(element);
+        </script>
     </body>
 </html>
