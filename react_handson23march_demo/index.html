@@ -23,12 +23,17 @@
 
       const fullName = {
         firstName: "Sai",
-        className: "Uttej"
+        lastName: "Uttej",
       };
 
-      const displayName = (obj) => obj.firstName+" "+obj.lastName;
+      const displayName = (obj) => obj.firstName + " " + obj.lastName;
 
-      const element = <h1 className={className}>My name is {displayName(fullname)}</h1>;
+      const element = (
+        <div>
+        <h1 className={className}>My name is {displayName(fullName)}</h1>
+        <p className={className}>This is a paragraph element by JSX</p>
+        </div>
+      );
       
       ReactDOM.render(element, rootE1);
 
