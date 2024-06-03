@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link 
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;
-        rel="stylesheet
-        />
-        <link rel="stylesheet" href="./index.css">
-    </head>
-    <body>
-        <div id="root"></div>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500"
+      ;
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
 
-        <script type="text/javascript">
-            const rootE1 = document.getElementById("root");
-            const element = document.createElement("h1");
-            element.textContent = "This is created using Javascript..."
-            element.classList.add("message");
-            rootE1.appendChild(element);
-        </script>
-    </body>
+    <script type="module">
+      React.createElement(type, props);
+      const rootE1 = document.getElementById("root");
+
+      const props = {
+        className: "message",
+        children: "This is created using React...",
+      };
+
+      const element = React.createElement("h1", props);
+      ReactDOM.render(element, rootE1);
+
+      // const rootE1 = document.getElementById("root");
+      // const element = document.createElement("h1");
+      // element.textContent = "This is created using Javascript..."
+      // element.classList.add("message");
+      // rootE1.appendChild(element);
+    </script>
+  </body>
 </html>
