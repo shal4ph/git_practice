@@ -23,10 +23,12 @@
 
       const fullName = {
         firstName: "Sai",
-        className: "message"
-      }
+        className: "Uttej"
+      };
 
-      const element = <h1 className={className}>My name is {name}</h1>;
+      const displayName = (obj) => obj.firstName+" "+obj.lastName;
+
+      const element = <h1 className={className}>My name is {displayName(fullname)}</h1>;
       
       ReactDOM.render(element, rootE1);
 
