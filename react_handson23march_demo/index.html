@@ -17,9 +17,11 @@
     <script type="text/babel">
       //created jsx syntax
       const rootE1 = document.getElementById("root");
-      const element = (
-        <h1 className="message">This element is created using Babel jsx...</h1>
-      );
+      const name = "Sai";
+      const className = "message";
+
+      const element = <h1 className={className}>My name is {name}</h1>;
+      
       ReactDOM.render(element, rootE1);
 
       //CREATED element using REACT
