@@ -1,0 +1,13 @@
+:root {
+    font-family: 'Tangerine', serif;
+    min-height: 100vh;
+    max-width: 1280px;
+    background-color: azure;
+    margin: 0 auto;
+}
+body {
+
+    margin: 0px !important;
+    background-color: white;
+    border: 1px solid wheat;
+}
