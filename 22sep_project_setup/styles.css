@@ -100,3 +100,14 @@ nav ul {
         text-align: center;
     }
 }
+
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 24px;
+}
